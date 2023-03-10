@@ -171,10 +171,15 @@ section {
     position: absolute;
     top: 0;
     left: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
     background-color: var(--tirtiary);
     border-radius: 0 20px 20px 0;
     box-shadow: var(--shadow);
+}
+
+.slider::-webkit-scrollbar {
+    display: none;
 }
 
 .slider.active {
@@ -237,6 +242,7 @@ section {
     background-color: var(--primary);
     cursor: pointer;
     border-radius: 999px;
+    outline: none;
 }
 
 .slider-controls .arrow.spin {
