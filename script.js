@@ -16,10 +16,6 @@ closeNoticeBoard.onclick = () => noticeBoard.classList.add('close');
 const assetTemplate = document.querySelector('[data-asset-template]');
 const assetContainer = document.querySelector('.asset-container');
 
-const assetOneContent = `<iframe width="100%" height="250" src="https://www.youtube.com/embed/TiMRwri1xJ8" title="Technological Project Management" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
-
-const assetTwoContent = `<iframe width="100%" height="400" src="https://dtthon.deepthought.education/sharer?id=01aa3cff-db8e-8d9d-afc0-1671715937878" frameborder="0"></iframe>`
-
 fetch('/db.json')
     .then(response => response.json())
     .then(json => {
@@ -61,12 +57,10 @@ fetch('/db.json')
             assetTitle.textContent = item.asset_title;
             assetDesc.innerHTML = ' <b>Description: </b>' + item.asset_description;
 
-            if(item.asset_id === 18883) {
-                assetContent.innerHTML = assetOneContent;
-            } else if (item.asset_id === 18886) {
-                assetContent.innerHTML = assetTwoContent;
+            if(item.asset_content !== ' ') {
+                assetContent.innerHTML = `<iframe width="100%" height="315" src="${item.asset_content.trim()}" title="Technological Project Management" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
             } else {
-                assetContent.textContent = 'Asset content was empty';
+                assetContent.textContent = 'Asset content is empty';
             };
 
             assetContainer.append(asset);
