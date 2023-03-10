@@ -10,6 +10,11 @@ const slider = document.querySelector('.slider');
 const sliderTitle = document.querySelector('.slider-content h3');
 const taskContainer = document.querySelector('.tasks');
 
+const noticeBoard = document.querySelector('.notice-board');
+const closeNoticeBoard = document.querySelector('.close-notice-board');
+
+closeNoticeBoard.onclick = () => noticeBoard.classList.add('close');
+
 // fetching JSON data ->
 
 fetch('/db.json')
@@ -23,9 +28,12 @@ fetch('/db.json')
         taskDesc.textContent = data.task_description;
 
         let toggle = false;
+        
         sliderTitle.textContent = data.task_title;
         data.assets.map(item => {
-            taskContainer.innerHTML += `<li>${item.asset_title}</li>`
+            const listItem = document.createElement('li');
+            listItem.textContent = item.asset_title;
+            taskContainer.append(listItem);
         });
 
         toggleButton.onclick = () => {

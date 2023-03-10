@@ -33,7 +33,37 @@ main {
 }
 
 section {
-    padding: 0 12rem;
+    padding: 0 2rem;
+}
+
+footer {
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+}
+
+footer > button {
+    width: 2.75rem;
+    height: 2.75rem;
+    display: grid;
+    place-items: center;
+    background-color: var(--accent);
+    box-shadow: var(--shadow);
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+}
+
+footer img {
+    width: 1.25rem;
+}
+
+footer > button:hover {
+    background-color: var(--hover);
+    transform: translateY(-4px);
 }
 
 /* ---------------------
@@ -97,6 +127,64 @@ section {
 /* -------------------
    navigation menu end
    ------------------- */
+
+/* ------------
+   header start
+   ------------ */
+
+.title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.title-container h1 {
+    color: var(--accent);
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.title-container button {
+    padding: 8px 24px;
+    color: white;
+    font-weight: 500;
+    font-size: 12px;
+    background-color: var(--accent);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.title-container button:hover {
+    background-color: var(--hover);
+}
+
+.task-container {
+    padding: 1.25rem;
+    background-color: var(--primary);
+    border-radius: 5px;
+}
+
+.task-container h2 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    margin-bottom: 6px;
+}
+
+.task-container p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.02em;
+}
+
+/* ----------
+   header end
+   ---------- */
 
 
 /* -------------------
@@ -208,60 +296,134 @@ section {
    ------------------- */
 
 
-/* ------------
-   header start
-   ------------ */
+/* ---------------------
+   asset container start
+   --------------------- */
 
-.title-container {
+.asset-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.asset {
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+    background-color: var(--tirtiary);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.asset-title {
+    height: 3rem;
+    padding: 0 1.25rem;
+    background-color: var(--secondary);
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    justify-content: space-between;
 }
 
-.title-container h1 {
-    color: var(--accent);
-    font-size: 28px;
-    font-weight: 700;
+.asset-title > h3 {
+    width: 90%;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
     letter-spacing: 0.02em;
+    text-align: center;
 }
 
-.title-container button {
-    padding: 8px 24px;
-    color: white;
-    font-weight: 500;
-    font-size: 12px;
-    background-color: var(--accent);
-    border: none;
-    border-radius: 10px;
+.asset-title > span {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: grid;
+    place-items: center;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.02em;
+    background-color: var(--tirtiary);
+    border-radius: 999px;
     cursor: pointer;
 }
 
-.title-container button:hover {
-    background-color: var(--hover);
-}
-
-.task-container {
-    padding: 1.25rem;
+.asset-desc {
+    padding: 1.25rem .75rem;
     background-color: var(--primary);
-    border-radius: 5px;
 }
 
-.task-container h2 {
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 30px;
+.asset-desc > p {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
     letter-spacing: 0.02em;
-    margin-bottom: 6px;
 }
 
-.task-container p {
+/* -------------------
+   asset container end
+   ------------------- */
+
+/* ------------------
+   notice board start
+   ------------------ */
+
+.notice-board {
+    width: fit-content;
+    height: 60vh;
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    background-color: var(--tirtiary);
+    border-radius: 20px 0 0 20px;
+    box-shadow: var(--shadow);
+}
+
+.notice-board.close {
+    display: none;
+}
+
+.notice-board .controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary);
+    padding: 1.25rem;
+}
+
+.notice-board button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+.notice-board button>img {
+    width: 16px;
+}
+
+.notice-board .letters {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.notice-board .letters span {
+    color: var(--primary);
     font-weight: 400;
-    font-size: 14px;
-    line-height: 21px;
-    letter-spacing: 0.02em;
-};
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: uppercase;
+}
 
-/* ----------
-   header end
-   ---------- */
+.notice-board > div:nth-child(2) {
+    padding: 1.25rem;
+}
+
+/* ----------------
+   notice board end
+   ---------------- */
