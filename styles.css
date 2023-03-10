@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --accent: #0029FF;
+    --hover: #3355FF;
+    --primary: #F0F0F0;
+    --secondary: #000;
+    --tirtiary: #FDFDFD;
+    --shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 250ms, transform 500ms;
+}
+
+body {
+    position: relative;
+}
+
+header {
+    width: 100%;
+    height: fit-content;
+    padding: 10px 0;
+}
+
+main {
+    position: relative;
+    padding: 0 10rem;
+}
+
+section {
+    padding: 0 12rem;
+}
+
+/* ---------------------
+   navigation menu start
+   --------------------- */
+
+.navigation-menu {
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding: 0 8rem;
+    background-color: var(--primary);
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buttons-container {
+    display: flex;
+    align-items: center;
+    column-gap: .75rem;
+}
+
+.buttons-container .button {
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    display: grid;
+    place-items: center;
+    border: none;
+    background-color: var(--accent);
+    border-radius: 999px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.buttons-container .button:hover {
+    background-color: var(--hover);
+}
+
+.buttons-container .admin img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    object-position: center;
+}
+
+.buttons-container .dots {
+    height: 2rem;
+    position: relative;
+    display: grid;
+    place-items: center;
+    border: none;
+    cursor: pointer;
+}
+
+/* -------------------
+   navigation menu end
+   ------------------- */
+
+
+/* -------------------
+   journey board start
+   ------------------- */
+
+.slider {
+    width: 400px;
+    height: 60vh;
+    transform: translateX(-315px);
+    display: grid;
+    grid-template-columns: 300px 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background-color: var(--tirtiary);
+    border-radius: 0 20px 20px 0;
+    box-shadow: var(--shadow);
+}
+
+.slider.active {
+    transform: translateX(0px);
+}
+
+.slider-content > .header {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 1.25rem;
+    background-color: var(--secondary);
+}
+
+.slider-content > .body {
+    padding-block: 1.25rem;
+    padding-inline: 1.25rem 0;
+}
+
+.slider-content h2 {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 24px;
+}
+
+.slider-content h3 {
+    color: var(--secondary);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.slider-content ul {
+    margin-top: .5rem;
+    padding: 0 1.25rem;
+}
+
+.slider-content ul li {
+    color: var(--secondary);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.slider-controls > .header {
+    height: 3rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 1.25rem 0 0;
+    background-color: var(--secondary);
+}
+
+.slider-controls button {
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    background-color: var(--primary);
+    cursor: pointer;
+    border-radius: 999px;
+}
+
+.slider-controls .arrow.spin {
+    transform: rotate(180deg);
+}
+
+.slider-controls > .body {
+    display: flex;
+    justify-content: flex-end;
+    padding-block: 1.25rem;
+    padding-inline: 0 1.25rem;
+}
+
+.slider-controls span {
+    width: 3rem;
+    height: 3rem;
+    color: var(--accent);
+    font-size: 1.5rem;
+    font-weight: 400;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--accent);
+    border-radius: 10px;
+}
+
+/* -------------------
+   journey board end
+   ------------------- */
+
+
+/* ------------
+   header start
+   ------------ */
+
+.title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.title-container h1 {
+    color: var(--accent);
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.title-container button {
+    padding: 8px 24px;
+    color: white;
+    font-weight: 500;
+    font-size: 12px;
+    background-color: var(--accent);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.title-container button:hover {
+    background-color: var(--hover);
+}
+
+.task-container {
+    padding: 1.25rem;
+    background-color: var(--primary);
+    border-radius: 5px;
+}
+
+.task-container h2 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.02em;
+    margin-bottom: 6px;
+}
+
+.task-container p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.02em;
+};
+
+/* ----------
+   header end
+   ---------- */
