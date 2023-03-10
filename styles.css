@@ -36,36 +36,6 @@ section {
     padding: 0 2rem;
 }
 
-footer {
-    position: fixed;
-    right: 40px;
-    bottom: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: .75rem;
-}
-
-footer > button {
-    width: 2.75rem;
-    height: 2.75rem;
-    display: grid;
-    place-items: center;
-    background-color: var(--accent);
-    box-shadow: var(--shadow);
-    border-radius: 999px;
-    border: none;
-    cursor: pointer;
-}
-
-footer img {
-    width: 1.25rem;
-}
-
-footer > button:hover {
-    background-color: var(--hover);
-    transform: translateY(-4px);
-}
-
 /* ---------------------
    navigation menu start
    --------------------- */
@@ -82,6 +52,7 @@ footer > button:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 100;
 }
 
 .buttons-container {
@@ -296,6 +267,45 @@ footer > button:hover {
    ------------------- */
 
 
+/* --------------------
+   call to action start
+   -------------------- */
+
+.call-to-action {
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+}
+
+.call-to-action>button {
+    width: 2.75rem;
+    height: 2.75rem;
+    display: grid;
+    place-items: center;
+    background-color: var(--accent);
+    box-shadow: var(--shadow);
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+}
+
+.call-to-action img {
+    width: 1.25rem;
+}
+
+.call-to-action>button:hover {
+    background-color: var(--hover);
+    transform: translateY(-4px);
+}
+
+/* ------------------
+   call to action end
+   ------------------ */
+
+
 /* ---------------------
    asset container start
    --------------------- */
@@ -304,12 +314,12 @@ footer > button:hover {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    margin-top: 2rem;
+    padding-block: 2rem;
 }
 
 .asset {
     width: 100%;
-    height: fit-content;
+    height: 60vh;
     overflow: hidden;
     background-color: var(--tirtiary);
     border-radius: 15px;
@@ -350,13 +360,13 @@ footer > button:hover {
 }
 
 .asset-desc {
-    padding: 1.25rem .75rem;
+    padding: 1.25rem;
     background-color: var(--primary);
 }
 
 .asset-desc > p {
-    font-weight: 600;
-    font-size: 16px;
+    font-weight: 400;
+    font-size: 14px;
     line-height: 22px;
     letter-spacing: 0.02em;
 }
@@ -427,3 +437,25 @@ footer > button:hover {
 /* ----------------
    notice board end
    ---------------- */
+
+
+/* ------------
+   footer start
+   ------------ */
+
+footer {
+    width: 100%;
+    height: 10vh;
+    display: grid;
+    place-items: center;
+    background-color: var(--primary);
+}
+
+footer > p {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* ----------
+   footer end
+   ---------- */

@@ -94,16 +94,16 @@
         <!-- asset container start -->
 
         <section class="asset-container">
-            <template >
+            <template data-asset-template>
                 <div class="asset">
                     <div class="asset-title">
-                        <h3>Technical Project Management</h3>
+                        <h3 data-asset-title></h3>
                         <span>i</span>
                     </div>
                     <div class="asset-desc">
-                        <p><b>Description: </b></p>
+                        <p data-asset-desc></p>
                     </div>
-                    <div class="asset-content"></div>
+                    <div class="asset-content" data-asset-content></div>
                 </div>
             </template>
         </section>
@@ -133,19 +133,29 @@
         
         <!-- notice board end -->
 
+
+        <!-- call to action start -->
+        
+        <div class="call-to-action">
+            <button>
+                <img src="./assets/question-mark.png" alt="question-mark">
+            </button>
+            <button>
+                <img src="./assets/group.png" alt="group">
+            </button>
+            <button>
+                <img src="./assets/calendar.png" alt="calendar">
+            </button>
+        </div>
+
+        <!-- call to action end -->
+
     </main>
 
     <footer>
-        <button>
-            <img src="./assets/question-mark.png" alt="question-mark">
-        </button>
-        <button>
-            <img src="./assets/group.png" alt="group">
-        </button>
-        <button>
-            <img src="./assets/calendar.png" alt="calendar">
-        </button>
+        <p>DeepThoughts | Task completed by Shrideep</p>
     </footer>
+
 
 </body>
 </html>

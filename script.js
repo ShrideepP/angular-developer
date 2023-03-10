@@ -1,5 +1,3 @@
-// HTML elements ->
-
 const title = document.querySelector(".title-container h1");
 const taskTitle = document.querySelector(".task-container h2");
 const taskDesc = document.querySelector(".task-container p");
@@ -15,7 +13,8 @@ const closeNoticeBoard = document.querySelector('.close-notice-board');
 
 closeNoticeBoard.onclick = () => noticeBoard.classList.add('close');
 
-// fetching JSON data ->
+const assetTemplate = document.querySelector('[data-asset-template]');
+const assetContainer = document.querySelector('.asset-container');
 
 fetch('/db.json')
     .then(response => response.json())
@@ -28,8 +27,8 @@ fetch('/db.json')
         taskDesc.textContent = data.task_description;
 
         let toggle = false;
-        
         sliderTitle.textContent = data.task_title;
+
         data.assets.map(item => {
             const listItem = document.createElement('li');
             listItem.textContent = item.asset_title;
@@ -47,6 +46,21 @@ fetch('/db.json')
                 slider.classList.add('active');
             };
         };
+
+        
+        data.assets.forEach(item => {
+
+            const asset = assetTemplate.content.cloneNode(true).children[0];
+            const assetTitle = asset.querySelector('[data-asset-title]');
+            const assetDesc = asset.querySelector('[data-asset-desc]');
+            const assetContent = asset.querySelector('[data-asset-content]');
+
+            assetTitle.textContent = item.asset_title;
+            assetDesc.innerHTML = ' <b>Description: </b>' + item.asset_description;
+
+            assetContainer.append(asset);
+
+        });
 
     })
     .catch(error => console.log(error));
